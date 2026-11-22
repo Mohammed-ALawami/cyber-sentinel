@@ -1,0 +1,11 @@
+services:
+  sentinel:
+    build: .
+    ports:
+      - "8791:8791"
+    volumes:
+      - sentinel-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  sentinel-data:
