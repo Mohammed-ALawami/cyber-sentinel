@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyber Sentinel</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo">&#128737;</span>
+    <span class="name">CYBER&nbsp;SENTINEL</span>
+    <span class="tag">defensive log monitoring &middot; synthetic replay data</span>
+  </div>
+  <div class="conn">
+    <span id="dot" class="dot"></span>
+    <span id="connText">connecting</span>
+    <span id="clock"></span>
+  </div>
+</header>
+
+<section class="stats" id="stats">
+  <div class="card"><div class="num" id="stEvents">0</div><div class="lbl">events processed</div></div>
+  <div class="card"><div class="num" id="stAlerts">0</div><div class="lbl">alerts raised</div></div>
+  <div class="card"><div class="num" id="stHigh">0</div><div class="lbl">high / critical</div></div>
+  <div class="card"><div class="num small" id="stTop">-</div><div class="lbl">top risk source</div></div>
+</section>
+
+<section class="replay-bar">
+  <span class="replay-lbl">Replay a synthetic scenario:</span>
+  <span id="scenarioButtons"></span>
+  <button id="resetDemo" class="danger">reset demo data</button>
+</section>
+
+<main class="grid">
+  <section class="panel">
+    <h2>Live auth log <span class="hint" id="feedCount"></span></h2>
+    <div id="feed" class="feed"></div>
+  </section>
+  <section class="panel">
+    <h2>Alerts <span class="hint" id="alertCount"></span></h2>
+    <div class="status-filter" id="statusFilter">
+      <button class="fchip active" data-status="all">all</button>
+      <button class="fchip" data-status="open">open</button>
+      <button class="fchip" data-status="acknowledged">acknowledged</button>
+      <button class="fchip" data-status="resolved">resolved</button>
+    </div>
+    <div id="alerts" class="alerts"></div>
+  </section>
+</main>
+
+<aside id="drawer" class="drawer">
+  <button class="close" id="drawerClose">&times;</button>
+  <div id="drawerBody"></div>
+</aside>
+<div id="overlay" class="overlay"></div>
+<div id="toast" class="toast"></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
