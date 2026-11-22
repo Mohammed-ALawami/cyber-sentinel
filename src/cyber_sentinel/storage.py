@@ -187,4 +187,4 @@ class Storage:
             "alerts_by_severity": by_sev,
             "alerts_by_status": by_status,
             "top_risk_sources": [{"key": r["key"], "score": r["s"]} for r in top],
-  }
+        }
